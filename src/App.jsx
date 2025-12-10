@@ -4,7 +4,7 @@ import Todo from './Page2';
 import FilterableProductTable from './Page3';
 import UserCard from './Page4';
 import LoginCard from './Page5';
-
+import Calculator from './Page6';
 function MyButton(){
     return(
     <button>I am a button </button>
@@ -92,6 +92,7 @@ export default function MyApp(){
            <FilterableProductTable products={PRODUCTS} />
             <UserCard />
              <LoginCard loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
+               <Calculator title="Simple Calculator" />
 
         </div>
     )
