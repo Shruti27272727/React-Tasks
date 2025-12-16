@@ -1,17 +1,17 @@
-function LoginCard({ loggedIn, setLoggedIn }) {
+import { useNavigate } from "react-router-dom";
+
+function LoginCard() {
+  const navigate = useNavigate();
+
+  function handleLogin() {
+    localStorage.setItem("loggedIn", "true");
+    navigate("/dashboard");
+  }
+
   return (
     <div>
-      {loggedIn ? (
-        <div>
-          <h1>Welcome back!</h1>
-          <button onClick={() => setLoggedIn(false)}>Logout</button>
-        </div>
-      ) : (
-        <div>
-          <h1>Please Login</h1>
-          <button onClick={() => setLoggedIn(true)}>Login</button>
-        </div>
-      )}
+      <h1>Please Login</h1>
+      <button onClick={handleLogin}>Login</button>
     </div>
   );
 }
